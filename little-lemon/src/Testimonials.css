@@ -1,0 +1,102 @@
+.testimonials-section {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonials-title {
+  font-size: 40pt;
+  color: #000;
+  font-family: 'Inika', serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.testimonials-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.testimonial-item {
+  position: relative;
+  width: 200px;
+  height: 180px;
+  background: #eee;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.testimonial-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  left: 16px;
+  top: 19%;
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 1;
+}
+
+.testimonial-stars {
+  position: absolute;
+  left: 16px;
+  top: 4px;
+  font-size: 1.2rem;
+  color: #F4CE14;
+  width: 70px;
+  text-align: center;
+  z-index: 2;
+}
+
+.testimonial-name {
+  position: absolute;
+  left: 100px;
+  top: 30%;
+  transform: translateY(-50%);
+  font-family: 'Inika', serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.testimonial-review {
+  position: absolute;
+  left: 16px;
+  bottom: 24px;
+  right: 16px;
+  font-family: 'Inika', serif;
+  font-size: 1rem;
+  color: #333;
+  text-align: left;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .testimonials-section {
+    width: 100vw;
+  }
+  .testimonials-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100vw;
+  }
+  .testimonial-item {
+    width: 80vw;
+    max-width: 80vw;
+    height: 144px;
+  }
+}

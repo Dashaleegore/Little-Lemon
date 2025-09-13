@@ -1,5 +1,26 @@
+nav {
+  padding-top: 20pt;
+  padding-bottom: 10pt;
+}
 nav a {
   text-decoration: none;
+  font-family: 'Inika', serif;
+  color: #000;
+  font-size: 18pt;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s, border-radius 0.3s;
+  padding: 0.5em 0.7em;
+  border-radius: 8px;
+}
+nav a:hover {
+  background: #FAE68A;
+  color: #495E57;
+  border-radius: 8px;
+}
+nav a:active, nav a.active {
+  background: #F4CE14;
+  color: #495E57;
+  border-radius: 8px;
 }
 .App {
   text-align: center;
@@ -37,5 +58,52 @@ nav a {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsive layout for navigation and main content */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+nav img {
+  max-width: 100%;
+  height: auto;
+  height: 60px;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media (max-width: 1024px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .App-header {
+    min-height: 60vh;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  body {
+    width: 100vw;
+    min-height: auto;
+    margin: 0;
+  }
+}
+@media (max-width: 600px) {
+  nav ul {
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+  .App-header {
+    font-size: 1rem;
+    padding: 0.5rem;
   }
 }
