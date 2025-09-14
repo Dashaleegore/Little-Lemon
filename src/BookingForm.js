@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, availableTimes, dispatchTimes, onSubmit, submitForm }) {
+  const [isValid, setIsValid] = useState(false);
+
+  // Validate form fields
+  React.useEffect(() => {
+    const validDate = !!date;
+    const validTime = !!time;
+    const validGuests = guests >= 1 && guests <= 10;
+    const validOccasion = !!occasion;
+    setIsValid(validDate && validTime && validGuests && validOccasion);
+  }, [date, time, guests, occasion]);
+
   const handleDateChange = (e) => {
     setDate(e.target.value);
     dispatchTimes({ type: 'update', date: e.target.value });
   };
 
+  const handleGuestsChange = (e) => {
+    const value = Number(e.target.value);
+    setGuests(value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!isValid) return;
     const formData = {
       name: '', // Add name field if needed
       date,
@@ -36,7 +53,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
       </select>
 
       <label htmlFor="guests">Number of guests</label>
-      <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={e => setGuests(e.target.value)} required />
+      <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={handleGuestsChange} required />
 
       <label htmlFor="occasion">Occasion</label>
       <select id="occasion" value={occasion} onChange={e => setOccasion(e.target.value)} required>
@@ -44,7 +61,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
         <option value="Anniversary">Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your reservation" />
+      <input type="submit" value="Make Your reservation" disabled={!isValid} />
     </form>
   );
 }
