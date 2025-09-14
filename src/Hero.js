@@ -1,25 +1,29 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Hero.css';
-import restauranfood from './assets/images/restauranfood.jpg';
+// ...existing code...
 
 function Hero() {
   const navigate = useNavigate();
   return (
-    <section className="hero">
+    <section className="hero" aria-label="Restaurant Introduction">
       <div className="hero-content">
-        <h1 className="hero-caption">Little Lemon</h1>
-        <h2 className="hero-subtitle">Chicago</h2>
-        <p className="hero-description">
-          Little Lemon is a celebrated Chicago restaurant, awarded for its vibrant flavors and welcoming atmosphere.
+        <header>
+          <h1>Little Lemon</h1>
+          <h2>Chicago</h2>
+        </header>
+        <p>
+          We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
         </p>
-        <button className="hero-reserve-btn" onClick={() => navigate('/reservations')}>Reservations</button>
+        <button
+          className="reserve-btn"
+          onClick={() => navigate('/reservations')}
+          aria-label="On Click"
+        >
+          Reserve a Table
+        </button>
       </div>
-      <img 
-        src={restauranfood} 
-        alt="Restaurant food" 
-        className="hero-image"
-      />
+      {/* Removed greek-salad image from hero section */}
     </section>
   );
 }

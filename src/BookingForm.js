@@ -41,7 +41,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'grid', maxWidth: '200px', gap: '20px', margin: '0 auto' }}>
+    <form onSubmit={handleSubmit} style={{ display: 'grid', maxWidth: '200px', gap: '20px', margin: '0 auto' }} aria-label="Booking Form">
       <label htmlFor="res-date">Choose date</label>
       <input type="date" id="res-date" value={date} onChange={handleDateChange} required />
 
@@ -61,7 +61,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
         <option value="Anniversary">Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your reservation" disabled={!isValid} />
+      <input type="submit" value="Make Your reservation" disabled={!isValid} aria-label="On Click" />
     </form>
   );
 }
