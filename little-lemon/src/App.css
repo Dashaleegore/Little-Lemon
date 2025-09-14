@@ -108,13 +108,21 @@ nav img {
   }
 }
 
+#root, .App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 .footer {
   font-family: 'Inika', serif;
   padding-top: 5%;
-  position: relative;
-  top: 5%;
+  position: static;
 }
 .footer-content {
-  position: relative;
-  top: 5%;
+  position: static;
 }
