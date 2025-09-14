@@ -107,3 +107,14 @@ nav img {
     padding: 0.5rem;
   }
 }
+
+.footer {
+  font-family: 'Inika', serif;
+  padding-top: 5%;
+  position: relative;
+  top: 5%;
+}
+.footer-content {
+  position: relative;
+  top: 5%;
+}

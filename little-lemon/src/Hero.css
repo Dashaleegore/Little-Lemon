@@ -9,7 +9,7 @@
   justify-content: flex-start;
   font-family: 'Inika', serif;
   position: relative;
-  padding-bottom: 20pt; /* Added padding to the bottom */
+  padding-bottom: 15%; /* Add 15% space below the button as padding in the hero area */
 }
 
 .hero-content {
@@ -20,6 +20,7 @@
   align-items: flex-start;
   height: 100%;
   justify-content: space-between;
+  padding-bottom: 0;
 }
 
 .hero-caption {
@@ -51,7 +52,7 @@
 .hero-reserve-btn {
   display: block;
   width: 300px;
-  height: 80pt;
+  height: 80px;
   margin: 2rem auto 20pt 0;
   border-radius: 16px;
   background: #F4CE14;
@@ -63,6 +64,7 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.15);
   cursor: pointer;
   transition: box-shadow 0.2s;
+  position: static;
 }
 
 .hero-reserve-btn:hover {
@@ -116,11 +118,13 @@
     margin: 2rem auto 20pt auto;
   }
   .hero-image {
-    position: static;
-    width: 90vw;
-    max-width: 340px;
-    height: auto;
-    margin: 20pt auto;
+    position: absolute;
+    right: 2rem;
+    top: 20pt;
+    bottom: 20pt;
+    width: 340px;
+    height: calc(100% - 40pt);
+    margin: 0;
     display: block;
     transform: none;
   }
@@ -160,11 +164,13 @@
     margin: 1rem auto 20pt auto;
   }
   .hero-image {
-    position: static;
-    width: 95vw;
-    max-width: 250px;
-    height: auto;
-    margin: 20pt auto;
+    position: absolute;
+    right: 2rem;
+    top: 20pt;
+    bottom: 20pt;
+    width: 340px;
+    height: calc(100% - 40pt);
+    margin: 0;
     display: block;
     transform: none;
   }
